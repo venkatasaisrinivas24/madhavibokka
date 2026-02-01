@@ -1,318 +1,454 @@
 <!DOCTYPE html>
-<html lang="te">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Madhavi Narender Reddy Bokka | Ward 17 INC Candidate</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;700&display=swap" rel="stylesheet">
+    <title>Madhavi Narendher Reddy Community Outreach</title>
     <style>
-        body { font-family: 'Noto Sans Telugu', sans-serif; scroll-behavior: smooth; }
-        .inc-gradient { background: linear-gradient(90deg, #FF9933 0%, #FFFFFF 50%, #138808 100%); }
-        .hero-bg { background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1575089711124-739051296765?auto=format&fit=crop&q=80'); background-size: cover; background-position: center; }
+        /* --- CSS VARIABLES --- */
+        :root {
+            --primary-color: #1e4d40; /* Deep Forest Green - Professional */
+            --secondary-color: #2e7d67; /* Lighter Green */
+            --accent-color: #d4a017; /* Muted Gold for highlights */
+            --dark-text: #1a1a1a;
+            --light-text: #f4f4f4;
+            --white: #ffffff;
+            --gray-bg: #f5f7fa;
+            --shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        /* --- RESET & TYPOGRAPHY --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Roboto', Helvetica, Arial, sans-serif;
+            line-height: 1.7;
+            color: var(--dark-text);
+            background-color: var(--white);
+        }
+
+        /* --- NAVIGATION BAR --- */
+        nav {
+            background-color: var(--white);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            height: 80px;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: 800;
+            font-size: 1.1rem;
+            line-height: 1.2;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            max-width: 60%; /* Prevents overlapping links */
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-text);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        .nav-links a::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: var(--secondary-color);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 90vh; /* Takes up 90% of screen height */
+            background: linear-gradient(rgba(30, 77, 64, 0.3), rgba(30, 77, 64, 0.3)), 
+                        url('IMAGES/IMAGE4.jpeg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            padding: 0 20px;
+            margin-top: 80px; /* Offset for fixed nav */
+        }
+
+        .hero-content {
+            max-width: 800px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 35px;
+            opacity: 0.9;
+        }
+
+        .btn-cta {
+            background-color: var(--accent-color);
+            color: #000;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: transform 0.3s, background-color 0.3s;
+            display: inline-block;
+        }
+
+        .btn-cta:hover {
+            background-color: #e5b31e;
+            transform: translateY(-3px);
+        }
+
+        /* --- SECTIONS GENERAL --- */
+        section {
+            padding: 80px 20px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .section-header .divider {
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent-color);
+            margin: 0 auto;
+            border-radius: 2px;
+        }
+
+        /* --- ABOUT SECTION --- */
+        .about-text {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.15rem;
+            color: #555;
+        }
+
+        /* --- INITIATIVES (CARDS) --- */
+        .bg-gray {
+            background-color: var(--gray-bg);
+        }
+
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+            border-bottom: 4px solid transparent;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-bottom: 4px solid var(--secondary-color);
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        /* --- CONTACT SECTION --- */
+        .contact-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 20px;
+        }
+
+        .contact-info-card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            width: 100%;
+            max-width: 700px;
+            text-align: center;
+            border: 1px solid #eee;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: #e8f5e9;
+            color: var(--primary-color);
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+            letter-spacing: 0.5px;
+        }
+
+        .info-group {
+            margin-bottom: 25px;
+        }
+
+        .info-group h4 {
+            color: var(--dark-text);
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .info-group p, .info-group a {
+            color: #555;
+            font-size: 1.1rem;
+        }
+
+        .info-group a {
+            color: var(--secondary-color);
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: #1a2622;
+            color: #aebdb8;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        footer h5 {
+            color: var(--white);
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+
+        .copyright {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #2c3e38;
+            font-size: 0.8rem;
+        }
+
+        /* --- ANIMATIONS --- */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 15px 0;
+            }
+            nav {
+                height: auto;
+                position: relative;
+            }
+            .hero {
+                margin-top: 0;
+                height: 70vh;
+            }
+            .logo {
+                max-width: 100%;
+                font-size: 1rem;
+                margin-bottom: 15px;
+            }
+            .nav-links {
+                width: 100%;
+                justify-content: space-between;
+                gap: 10px;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body>
 
-    <!-- Navbar -->
-    <nav class="fixed w-full z-50 bg-white shadow-md border-b-4 border-orange-500">
-        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-            <!-- Left Side - Congress Logo -->
-            <div class="flex items-center space-x-3">
-                <img src="IMAGES/Congress party logo png _ Congress party logo transparent png_1662294376_772295810.webp" alt="Congress Logo" class="w-16 h-16 object-contain">
-                <div class="hidden sm:block">
-                    <p class="text-sm font-bold text-gray-700">Indian National Congress</p>
-                    <p class="text-xs text-orange-600">17వ వార్డు</p>
-                </div>
-            </div>
-
-            <!-- Center Navigation -->
-            <div class="hidden md:flex space-x-6 font-bold text-gray-700">
-                <a href="#home" class="hover:text-blue-600">హోమ్</a>
-                <a href="#about" class="hover:text-blue-600">మా గురించి</a>
-                <a href="#focus" class="hover:text-blue-600">ప్రాధాన్యతలు</a>
-                <a href="#why-inc" class="hover:text-blue-600">ఎందుకు INC?</a>
-                <a href="#contact" class="hover:text-blue-600">గ్యాలరీ</a>
-            </div>
-
-            <!-- Right Side - Candidate Name -->
-            <div class="text-right">
-                <p class="text-lg font-bold text-blue-900">మాధవి నరేందర్</p>
-                <p class="text-sm text-orange-600 font-bold">INC అభ్యర్థి</p>
-            </div>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">Madhavi Narendher Reddy<br>Community Outreach</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#initiatives">Initiatives</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="min-h-screen flex items-center justify-center pt-24 pb-12 bg-gradient-to-r from-blue-50 via-white to-orange-50">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
-                
-                <!-- Left Side - Congress Logo & Info -->
-                <div class="flex flex-col items-center justify-center">
-                    <!-- Congress Logo -->
-                    <div class="mb-6 p-6 bg-white rounded-2xl shadow-xl border-4 border-orange-500">
-                        <img src="IMAGES/Congress party logo png _ Congress party logo transparent png_1662294376_772295810.webp" alt="Congress Logo" class="w-32 h-32 object-contain">
-                    </div>
-                    
-                    <!-- Candidate Badge -->
-                    <div class="bg-green-600 text-white px-6 py-2 rounded-full font-bold text-center mb-4">
-                        INC అభ్యర్థి 2026
-                    </div>
-                    
-                    <!-- Tagline -->
-                    <p class="text-center text-gray-700 font-bold text-lg italic">
-                        "మాటలకంటే పనులు, హామీలకంటే అమలు"
-                    </p>
-                </div>
-
-                <!-- Center - Candidate Info -->
-                <div class="flex flex-col items-center justify-center text-center">
-                    <h1 class="text-4xl md:text-5xl font-bold text-blue-900 mb-4">
-                        మాధవి నరేందర్<br>రెడ్డి బొక్క
-                    </h1>
-                    
-                    <p class="text-xl text-orange-600 font-bold mb-6">
-                        17వ వార్డు కౌన్సిలర్ అభ్యర్థి
-                    </p>
-                    
-                    <p class="text-lg text-gray-700 mb-8 leading-relaxed">
-                        అభివృద్ధి మా లక్ష్యం – మీ విశ్వాసమే మా శక్తి
-                    </p>
-                    
-                    <div class="flex flex-col gap-3">
-                        <a href="#contact" class="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-lg font-bold text-lg transition">
-                            గ్యాలరీ చూడండి
-                        </a>
-                        <a href="#about" class="bg-blue-900 hover:bg-blue-800 text-white px-8 py-3 rounded-lg font-bold text-lg transition">
-                            మా గురించి తెలుసుకోండి
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Right Side - Candidate Image -->
-                <div class="flex justify-center">
-                    <div class="relative">
-                        <div class="absolute inset-0 bg-gradient-to-br from-orange-400 to-green-400 rounded-3xl transform rotate-3 opacity-20"></div>
-                        <img src="IMAGES/IMAGE4.jpeg" alt="Mounika Narender Reddy" class="relative w-full max-w-sm rounded-3xl shadow-2xl border-8 border-white object-contain">
-                    </div>
-                </div>
-
-            </div>
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Empowering Communities,<br>Building Futures</h1>
+            <p>Social Service & Community Support in Moinabad, Telangana</p>
+            <a href="#contact" class="btn-cta">Get in Touch</a>
         </div>
-    </section>
+    </header>
 
     <!-- About Section -->
-    <section id="about" class="py-20 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row items-center gap-12">
-                <div class="md:w-1/2">
-                    <img src="IMAGES/IMAGE1.jpeg" alt="Mounika Narender Reddy" class="rounded-2xl shadow-2xl border-8 border-gray-100 w-full h-auto object-cover">
-                </div>
-                <div class="md:w-1/2">
-                    <h2 class="text-3xl font-bold text-blue-900 mb-6">మా అభ్యర్థి గురించి</h2>
-                    <p class="text-lg leading-relaxed text-gray-700 mb-6">
-                        <strong>మాధవి నరేందర్ రెడ్డి బొక్క</strong> గారు 17వ వార్డు నివాసి, ప్రజల మధ్య నుంచే ఎదిగిన నాయకురాలు. 
-                        సామాజిక సేవ పట్ల నిబద్ధతతో, వార్డు ప్రజల సమస్యలకు శాశ్వత పరిష్కారాలు తీసుకురావాలనే లక్ష్యంతో 
-                        <strong>Indian National Congress (INC)</strong> తరఫున ఎన్నికల్లో పోటీ చేస్తున్నారు.
-                    </p>
-                    <div class="bg-blue-50 p-6 border-l-4 border-blue-800 rounded">
-                        <p class="text-xl font-bold text-blue-900 italic">“గ్రామం బలంగా ఉంటే – దేశం బలంగా ఉంటుంది”</p>
-                    </div>
-                </div>
+    <section id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>Who We Are</h2>
+                <div class="divider"></div>
             </div>
+            <p class="about-text">
+                <strong>Madhavi Narendher Reddy Community Outreach</strong> is a community-focused initiative working specifically for the welfare of Moinabad, Telangana. 
+                <br><br>
+                We bridge the gap between citizens and solutions, working tirelessly on public grievance support and local development activities. Our vision is a self-sustained, hygienic, and thriving community where every individual has access to basic welfare and support.
+            </p>
         </div>
     </section>
 
-    <!-- Key Focus Areas -->
-    <section id="focus" class="py-20 bg-gray-100">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold text-blue-900 mb-12">మా ప్రాధాన్యాలు (Key Focus Areas)</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <!-- Initiatives / Focus Areas -->
+    <section id="initiatives" class="bg-gray">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Initiatives</h2>
+                <div class="divider"></div>
+            </div>
+            
+            <div class="grid-cards">
                 <!-- Card 1 -->
-                <div class="bg-white p-8 rounded-xl shadow-lg hover:transform hover:-translate-y-2 transition duration-300">
-                    <div class="text-4xl text-orange-500 mb-4"><i class="fas fa-road"></i></div>
-                    <h3 class="text-xl font-bold mb-3">మౌలిక సదుపాయాలు</h3>
-                    <p class="text-gray-600">శుభ్రమైన తాగునీరు, మంచి రోడ్లు, డ్రైనేజ్ సమస్యలకు పరిష్కారం, వీధి దీపాల మెరుగుదల.</p>
+                <div class="card">
+                    <h3>Social Welfare</h3>
+                    <p>Providing essential support to the underprivileged. We organize drives for health awareness, distribute basic necessities, and ensure government schemes reach the beneficiaries.</p>
                 </div>
                 <!-- Card 2 -->
-                <div class="bg-white p-8 rounded-xl shadow-lg hover:transform hover:-translate-y-2 transition duration-300">
-                    <div class="text-4xl text-blue-500 mb-4"><i class="fas fa-graduation-cap"></i></div>
-                    <h3 class="text-xl font-bold mb-3">విద్య & యువత</h3>
-                    <p class="text-gray-600">పాఠశాలల అభివృద్ధి, యువతకు నైపుణ్య శిక్షణ, క్రీడా కార్యక్రమాలకు ప్రోత్సాహం.</p>
+                <div class="card">
+                    <h3>Grievance Support</h3>
+                    <p>A dedicated channel for the public to voice their concerns. We assist in resolving civic issues such as water supply, electricity, and sanitation by coordinating with local authorities.</p>
                 </div>
                 <!-- Card 3 -->
-                <div class="bg-white p-8 rounded-xl shadow-lg hover:transform hover:-translate-y-2 transition duration-300">
-                    <div class="text-4xl text-green-500 mb-4"><i class="fas fa-heartbeat"></i></div>
-                    <h3 class="text-xl font-bold mb-3">ఆరోగ్యం & పరిశుభ్రత</h3>
-                    <p class="text-gray-600">పారిశుధ్య కార్యక్రమాలు, ప్రభుత్వ ఆరోగ్య సేవల సులభ అందుబాటు.</p>
-                </div>
-                <!-- Card 4 -->
-                <div class="bg-white p-8 rounded-xl shadow-lg hover:transform hover:-translate-y-2 transition duration-300">
-                    <div class="text-4xl text-pink-500 mb-4"><i class="fas fa-female"></i></div>
-                    <h3 class="text-xl font-bold mb-3">మహిళలు & వృద్ధులు</h3>
-                    <p class="text-gray-600">మహిళల భద్రత, సంక్షేమ పథకాలు, వృద్ధుల సంక్షేమంపై ప్రత్యేక దృష్టి.</p>
-                </div>
-                <!-- Card 5 -->
-                <div class="bg-white p-8 rounded-xl shadow-lg hover:transform hover:-translate-y-2 transition duration-300">
-                    <div class="text-4xl text-yellow-500 mb-4"><i class="fas fa-briefcase"></i></div>
-                    <h3 class="text-xl font-bold mb-3">ఉపాధి అవకాశాలు</h3>
-                    <p class="text-gray-600">చిన్న వ్యాపారాలకు ప్రోత్సాహం, స్వయం ఉపాధి అవకాశాల కల్పన.</p>
-                </div>
-                <!-- Card 6 -->
-                <div class="bg-white p-8 rounded-xl shadow-lg hover:transform hover:-translate-y-2 transition duration-300">
-                    <div class="text-4xl text-indigo-500 mb-4"><i class="fas fa-users-cog"></i></div>
-                    <h3 class="text-xl font-bold mb-3">పారదర్శక పాలన</h3>
-                    <p class="text-gray-600">ప్రజల గొంతుక వినిపించేలా, అవినీతి లేని స్పష్టమైన స్థానిక పాలన.</p>
+                <div class="card">
+                    <h3>Local Development</h3>
+                    <p>Fostering the growth of Moinabad through infrastructure monitoring, cleanliness drives (Swachh Bharat initiatives), and promoting sustainable village development.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Why INC Section -->
-    <section id="why-inc" class="py-32 bg-gradient-to-r from-orange-500 via-white to-green-500">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-6xl font-black text-blue-900 mb-6 drop-shadow-2xl">✋ హస్తం - మీ శక్తి, మీ ఓటు</h2>
-                <p class="text-3xl font-bold text-orange-700">ఓటు వేయండి, మార్పు తీసుకురండి</p>
-                <div class="w-32 h-2 bg-orange-600 mx-auto mt-6 rounded-full"></div>
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Contact Information</h2>
+                <div class="divider"></div>
             </div>
-            <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white shadow-2xl p-10 rounded-2xl border-l-8 border-orange-600 hover:shadow-3xl transition transform hover:scale-105">
-                    <h4 class="font-black text-3xl mb-6 text-blue-900">🤝 ప్రజాస్వామ్య విలువలు</h4>
-                    <p class="text-gray-800 text-xl leading-relaxed font-semibold">
-                        ప్రతి ఓటు ఒక ఓ కంఠం. ప్రతి నిర్ణయం ప్రజల నుండి. ఇదే INC యొక్క ప్రతిశ్రుతి. మీ విశ్వాసమే మా బాధ్యత.
-                    </p>
-                </div>
-                <div class="bg-white shadow-2xl p-10 rounded-2xl border-l-8 border-green-600 hover:shadow-3xl transition transform hover:scale-105">
-                    <h4 class="font-black text-3xl mb-6 text-blue-900">⚖️ సామాజిక న్యాయం</h4>
-                    <p class="text-gray-800 text-xl leading-relaxed font-semibold">
-                        పేదవారికి, నిరుపేక్ష వర్గాలకు సమానమైన అవకాశాలు. ఎవరూ వెనుకబడకుండా అందరూ ముందుకు. ఇదే మా లక్ష్యం.
-                    </p>
-                </div>
-                <div class="bg-white shadow-2xl p-10 rounded-2xl border-l-8 border-blue-600 hover:shadow-3xl transition transform hover:scale-105">
-                    <h4 class="font-black text-3xl mb-6 text-blue-900">🗣️ పేదల గొంతుక</h4>
-                    <p class="text-gray-800 text-xl leading-relaxed font-semibold">
-                        వార్డు ప్రజల సమస్యలు మా సమస్యలు. మీ కష్టాలు మా బాధ్యత. కలిసి కట్టుకుందాం, కలిసి ముందుకు వెళ్దాం.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Voting Awareness Section -->
-    <section class="py-20 bg-white border-t-8 border-orange-500">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-4xl font-bold text-blue-900 mb-4">✋ హస్తం - మీ ఓటు, మీ శక్తి</h2>
-                <p class="text-xl text-gray-700">ఓటు వేయండి, మార్పు తీసుకురండి</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h3 class="text-3xl font-bold text-blue-900 mb-6">ఓటు వేయడం ఎందుకు ముఖ్యం?</h3>
-                    <ul class="space-y-4 text-lg text-gray-700">
-                        <li class="flex items-start">
-                            <span class="text-orange-500 font-bold mr-4">✓</span>
-                            <span><strong>మీ గొంతుక:</strong> ఓటు మీ అభిప్రాయం చెప్పే సాధనం</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-orange-500 font-bold mr-4">✓</span>
-                            <span><strong>మార్పు తీసుకురండి:</strong> సరైన నాయకుడిని ఎంచుకోండి</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-orange-500 font-bold mr-4">✓</span>
-                            <span><strong>భవిష్యత్తు నిర్ణయించండి:</strong> మీ కుటుంబం, మీ వార్డు, మీ దేశం</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-orange-500 font-bold mr-4">✓</span>
-                            <span><strong>బాధ్యత చేపట్టండి:</strong> ప్రజాస్వామ్యం సజీవంగా ఉంటుంది ఓటుల ద్వారా</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-orange-500 font-bold mr-4">✓</span>
-                            <span><strong>సమానత్యం:</strong> ప్రతి ఓటు సమానమైన విలువ కలిగి ఉంటుంది</span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="flex justify-center">
-                    <div class="bg-gradient-to-br from-orange-100 to-green-100 p-12 rounded-2xl shadow-xl">
-                        <img src="IMAGES/Congress party logo png _ Congress party logo transparent png_1662294376_772295810.webp" alt="Congress Logo" class="w-48 h-48 object-contain">
+            <div class="contact-wrapper">
+                <div class="contact-info-card">
+                    <span class="badge">UDYAM REGISTRATION: UDYAM-TS-09-0213438</span>
+                    
+                    <div class="info-group">
+                        <h4>Legal Entity</h4>
+                        <p>Madhavi Narendher Reddy Community Outreach</p>
+                    </div>
+
+                    <div class="info-group">
+                        <h4>Office Address</h4>
+                        <p>1-40, Chinna Shapur,<br>Moinabad, Telangana – 501504, India</p>
+                    </div>
+
+                    <div class="info-group">
+                        <h4>Contact Number</h4>
+                        <a href="tel:+917702601517">+91 7702601517</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Gallery Section -->
-    <section id="contact" class="py-20 bg-gray-50"></section>
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-4xl font-bold text-blue-900 mb-2">మాధవి నరేందర్ రెడ్డి బొక్క</h2>
-                <p class="text-2xl font-bold text-orange-500 mb-4">17వ వార్డు INC అభ్యర్థి</p>
-                <p class="text-gray-600 text-lg">ఫోటో గ్యాలరీ - ప్రజల సేవలో నిమగ్న క్షణాలు</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Gallery Image 1 -->
-                <div class="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition duration-300 bg-white">
-                    <img src="IMAGES/IMAGE1.jpeg" alt="Gallery 1" class="w-full h-96 object-contain group-hover:scale-105 transition duration-300" loading="lazy">
-                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition duration-300"></div>
-                </div>
-
-                <!-- Gallery Image 2 -->
-                <div class="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition duration-300 bg-white">
-                    <img src="IMAGES/IMAGE2.jpeg" alt="Gallery 2" class="w-full h-96 object-contain group-hover:scale-105 transition duration-300" loading="lazy">
-                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition duration-300"></div>
-                </div>
-
-                <!-- Gallery Image 3 -->
-                <div class="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition duration-300 bg-white">
-                    <img src="IMAGES/IMAGE3.jpeg" alt="Gallery 3" class="w-full h-96 object-contain group-hover:scale-105 transition duration-300" loading="lazy">
-                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition duration-300"></div>
-                </div>
-
-                <!-- Gallery Image 4 -->
-                <div class="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition duration-300 bg-white">
-                    <img src="IMAGES/IMAGE4.jpeg" alt="Gallery 4" class="w-full h-96 object-contain group-hover:scale-105 transition duration-300" loading="lazy">
-                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition duration-300"></div>
-                </div>
-
-                <!-- Gallery Image 5 -->
-                <div class="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition duration-300 bg-white">
-                    <img src="IMAGES/IMAGE5.jpeg" alt="Gallery 5" class="w-full h-96 object-contain group-hover:scale-105 transition duration-300" loading="lazy">
-                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition duration-300"></div>
-                </div>
-
-                <!-- Gallery Image 6 -->
-                <div class="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition duration-300 bg-white">
-                    <img src="IMAGES/IMAGE6.jpeg" alt="Gallery 6" class="w-full h-96 object-contain group-hover:scale-105 transition duration-300" loading="lazy">
-                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition duration-300"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer / Vote Appeal -->
-    <footer class="bg-gray-900 text-white py-12 border-t-8 border-orange-500">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl md:text-5xl font-bold mb-6">మీ ఓటు – మా బాధ్యత</h2>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <h5>Madhavi Narendher Reddy Community Outreach</h5>
+            <p>1-40, Chinna Shapur, Moinabad, Telangana – 501504</p>
+            <p>Udyam Reg: UDYAM-TS-09-0213438</p>
             
-            <!-- Congress Logo in Footer -->
-            <div class="flex justify-center mb-6">
-                <div class="bg-white rounded-lg p-4 border-4 border-orange-500">
-                    <img src="IMAGES/Congress party logo png _ Congress party logo transparent png_1662294376_772295810.webp" alt="Congress Logo" class="w-20 h-20 object-contain">
-                </div>
+            <div class="copyright">
+                &copy; 2026 Madhavi Narendher Reddy Community Outreach. All Rights Reserved.
+                <br>This website is for community outreach and social service purposes only.
             </div>
-            
-            <p class="text-2xl mb-8">17వ వార్డు సమగ్ర అభివృద్ధి కోసం.. <br> <span class="text-orange-400 font-bold">మాధవి నరేందర్ రెడ్డి బొక్క</span> కు మద్దతు ఇవ్వండి.</p>
-            
-            <div class="flex justify-center space-x-6 mb-8">
-                <a href="#" class="text-3xl hover:text-blue-400"><i class="fab fa-facebook"></i></a>
-                <a href="#" class="text-3xl hover:text-pink-400"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="text-3xl hover:text-blue-300"><i class="fab fa-twitter"></i></a>
-            </div>
-
-            <hr class="border-gray-700 mb-8">
-            <p class="text-gray-500">© 2026 Mounika Narender Reddy Bokka. All Rights Reserved. | 17వ వార్డు, INC అభ్యర్థి</p>
         </div>
     </footer>
 
